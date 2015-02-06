@@ -1,2 +1,2 @@
-这是使用django做的bbs论坛，主要用到的表有：bbs帖子表，bbsuser表（继承django的user表），用户评论表（weidjango内部集成）。
-
+	这是使用django做的bbs论坛，主要用到的表有：bbs帖子表，bbsuser表（继承django的user表），用户评论表（django内部集成）。
+	主要实现的功能是发帖，评论，和用户的认证。
