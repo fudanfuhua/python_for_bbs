@@ -1,1 +1,2 @@
-qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+这是使用django做的bbs论坛，主要用到的表有：bbs帖子表，bbsuser表（继承django的user表），用户评论表（weidjango内部集成）。
+
