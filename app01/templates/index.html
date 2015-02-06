@@ -1,0 +1,40 @@
+
+									
+					<a href="#" class="tb">段子</a>
+					
+				
+									
+					<a href="#" class="tb">图片</a>
+				
+	
+					{% if user.is_authenticated  %}
+						{{ user.username }}
+						<a href="/logout_views/" >Logout</a>	
+					{% else %}
+						<a href="/login">请登录</a>
+					{% endif %}
+
+			</div>
+		
+	
+
+{% block page-content %}
+
+		{% for bbs in bbs_list %}
+		<hr>
+			<br>
+			发布标题：<a href="/detail/{{bbs.id}}/">{{ bbs.title }}</a>
+			<br>
+			发布作者：{{ bbs.author }}
+			<br>
+			 摘要：{{ bbs.summary}}
+		<hr>
+		{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+

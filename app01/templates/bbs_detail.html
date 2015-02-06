@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load comments %}
+{% block page-content %}
+	<hr>
+	<h1>发布</h1>
+		发布标题：{{ bbs_obj.title }}
+	<br>
+		发布内容：{{ bbs_obj.content | safe }}
+		<!--|safe de function is to save yuan geshi-->
+	<hr>
+	{% if user.is_authenticated %}
+	<form action="/sub_comment/" method="POST">
+		<textarea clos=90 raw=9  name="comment_content"></textarea>
+		<input type="hidden" name="bbs_id" value="{{bbs_obj.id}}" />
+		<input type="submit"   value="Add content"  id="id_submit" />
+	</form> 
+	{%else%}
+			<p>Please <a href='/login'>Login</a> to submit a comment</p>
+	{%endif%}
+	
+			{% get_comment_count for bbs_obj as comment_count %}
+		<h2>评论数：{{ comment_count }}</h2>
+			
+    {% render_comment_list for bbs_obj  %}
+    <hr>
+    
+    
+{% endblock %}

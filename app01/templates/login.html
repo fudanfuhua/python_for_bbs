@@ -1,0 +1,13 @@
+{% extends  'index.html' %}
+
+{% block page-content %}
+<hr>
+<form action='/acc_login' method='GET'>	
+	<input type='text' name='username' />
+	<br>
+	<input type='password' name='password' />
+	<input type='submit'  value='Login' />
+	<span style='color:red' >{{ login_err }}</span>
+</from>
+
+{% endblock %}
